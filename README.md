@@ -22,17 +22,20 @@ This project implements a simple cart button with a popup feature using HTML, CS
 
 To run this project locally, follow these steps:
 
+## Installation
+
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/cart-popup.git
+    git clone https://github.com/yourusername/QuickCart.git
     ```
 
 2. Navigate to the project directory:
     ```bash
-    cd cart-popup
+    cd QuickCart
     ```
 
 3. Open the `index.html` file in your preferred web browser.
+
 
 ## File Structure
 
