@@ -28,45 +28,53 @@
                 <img src="Assets/image-avatar.png" alt="Icon" width="32" height="32">
             </button>
         </div>
-        
+        <!-- Hamburger Menu Icon for smaller width -->
+        <div class="hamburger-menu" id="hamburger-menu">
+            <img src="Assets/icon-menu.svg" alt="Menu Icon" width="24" height="24">
+        </div>
+
+        <!-- Mobile menu -->
+        <nav class="nav-links mobile-menu" id="mobile-menu">
+            <a href="#" class="navElem">Collections</a>
+            <a href="#" class="navElem">Men</a>
+            <a href="#" class="navElem">Women</a>
+            <a href="#" class="navElem">About</a>
+            <a href="#" class="navElem">Contact</a>
+            <button id="close-menu" class="close-menu">✕</button> 
+        </nav>
+
     </div>
+
     <!-- Cart Popup Structure -->
     <div id="cart-popup" class="cart-popup hidden">
         <h3>Cart</h3>
-        <div class="cart-content">
-            <!-- If cart is not empty -->
-            <div class="cart-item">
-                <img src="Assets/image-product-1-thumbnail.jpg" alt="Product Image" class="cart-item-image" width="50">
-                <div class="cart-item-details">
-                    <p>Fall Limited Edition Sneakers</p>
-                    <p>$125.00 x <span id="cart-item-quantity">3</span> <strong>$<span id="cart-total-price">375.00</span></strong></p>
-                </div>
-                <button class="remove-item-btn">
-                    <img src="Assets/icon-delete.svg" alt="Remove">
-                </button>
-            </div>
-        </div>
+        <div id="cart-popup" class="cart-popup hidden"> 
+            <h3>Cart</h3>
+            <p>Quantity: <span id="item-quantity"></span></p>
+            <p>Total Price: <span id="total-price"></span></p>
+            <button class="checkout-btn">Checkout</button>
+          </div>
         <button class="checkout-btn">Checkout</button>
     </div>
 
-    <!-- Production section-->
+    <!-- Product section -->
     <section class="product-section">
-        <!-- Left half  - Images -->
+        <!-- Left half - Images -->
         <div class="left-half">
-            <img src="Assets\image-product-1.jpg" alt="Big Shoe" class="big-shoe">
+            <img src="Assets/image-product-1.jpg" alt="Big Shoe" class="big-shoe">
             <div class="small-images">
-                <img src="Assets\image-product-1-thumbnail.jpg" alt="Small Image 1" class="small-image">
-                <img src="Assets\image-product-2-thumbnail.jpg" alt="Small Image 2" class="small-image">
-                <img src="Assets\image-product-3-thumbnail.jpg" alt="Small Image 3" class="small-image">
-                <img src="Assets\image-product-4-thumbnail.jpg" alt="Small Image 4" class="small-image">
+                <img src="Assets/image-product-1-thumbnail.jpg" alt="Small Image 1" class="small-image">
+                <img src="Assets/image-product-2-thumbnail.jpg" alt="Small Image 2" class="small-image">
+                <img src="Assets/image-product-3-thumbnail.jpg" alt="Small Image 3" class="small-image">
+                <img src="Assets/image-product-4-thumbnail.jpg" alt="Small Image 4" class="small-image">
             </div>
         </div>
 
-        <!-- Popup section-->
+        <!-- Popup section -->
         <div id="image-popup" class="popup">
             <div class="popup-content">
                 <span class="close-popup">&times;</span>
-                <img id="popup-big-shoe" src="" alt="Popup Big Shoe" class="popup-big-shoe">
+                <img id="popup-big-shoe" src="Assets/image-product-1-thumbnail.jpg" alt="Popup Big Shoe" class="popup-big-shoe">
                 <div class="popup-small-images">
                     <img src="Assets/image-product-1-thumbnail.jpg" alt="Small Image 1" class="small-image" data-full="Assets/image-product-1.jpg">
                     <img src="Assets/image-product-2-thumbnail.jpg" alt="Small Image 2" class="small-image" data-full="Assets/image-product-2.jpg">
@@ -75,27 +83,28 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Popup section ends-->
-        <!-- Right Half with content-->
+
+        <!-- Right Half with content -->
         <div class="right-half">
-            <h3 class = "ProductText">SNEAKER COMPANY</h3>
+            <h3 class="ProductText">SNEAKER COMPANY</h3>
             <br>
-            <h1 class = "ProductName">Fall Limited </h1><h1 class = "ProductName">Sneakers</h1>
+            <h1 class="ProductName">Fall Limited</h1>
+            <h1 class="ProductName">Sneakers</h1>
             <br>
             <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
             <br>
-            <!-- Price section-->
+
+            <!-- Price section -->
             <div class="price-section">
                 <span class="price">$125.00</span>
-                <!-- Discount Box-->
+                <!-- Discount Box -->
                 <div class="discount-box">
                     <span class="discount">50%</span>
                 </div>
             </div>
             <span class="striked-price">$200.00</span>
 
-            <!-- Buttons section-->
+            <!-- Buttons section -->
             <div class="button-container">
                 <div class="quantity-control">
                     <button class="quantity-btn minus-btn">
@@ -109,19 +118,15 @@
                 <button class="add-to-cart-button">
                     <img src="Assets/icon-cart.svg" alt="Cart Icon" class="cart-icon"> Add to Cart
                 </button>
-
-                <!-- Cart popup-->
+            </div>
+            
+                <!-- Cart popup -->
                 <div class="nav-icons">
                     <div class="cart-icon-container">
-                        <button id="cart-button" class="add-to-cart-button">
-                            <img src="Assets/icon-cart.svg" alt="Cart Icon" class="cart-icon" />
-                            Cart
-                            <span class="notification-circle" id="cart-notification">0</span>
-                        </button>
                         <div class="cart-popup" id="cart-popup" style="display: none;">
                             <h3>Your Cart</h3>
                             <div class="cart-content" id="cart-content">
-                                <!-- Static Cart Items -->
+                                <!--Cart Items -->
                                 <div class="cart-item">
                                     <img src="Assets/sneaker-image.png" alt="Sneakers" class="cart-item-image" />
                                     <div class="cart-item-details">
@@ -129,7 +134,6 @@
                                         <p>$125.00 x <span id="item-quantity">1</span></p>
                                     </div>
                                 </div>
-                                <!-- Add more static items as needed -->
                             </div>
                             <div class="checkout-section">
                                 <p>Total: <strong id="total-price">$125.00</strong></p>
@@ -139,11 +143,10 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
-   
+
     <script src="script.js"></script>
 </body>
 </html>

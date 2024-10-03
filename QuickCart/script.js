@@ -63,42 +63,65 @@ document.addEventListener('DOMContentLoaded', function () {
 // Cart popup and add to cart
 document.getElementById('add-to-cart-button').addEventListener('click', function () {
     const notificationCircle = document.getElementById('cart-notification');
-    let currentQuantity = parseInt(notificationCircle.innerText) || 0; // Fallback to 0 if empty
-    const itemQuantity = parseInt(document.getElementById("number").innerText); // Get the current selected quantity
+    let currentQuantity = parseInt(notificationCircle.innerText) || 0; 
+    const itemQuantity = parseInt(document.getElementById("number").innerText); 
 
-    currentQuantity += itemQuantity; // Increment with selected quantity
-    notificationCircle.innerText = currentQuantity; // Update the notification
-    notificationCircle.style.display = 'block'; // Ensure it is visible
+    currentQuantity += itemQuantity; 
+    notificationCircle.innerText = currentQuantity; 
+    notificationCircle.style.display = 'block';
 
     // Update cart display logic
     const cartTotalPrice = document.getElementById('cart-total-price');
     const cartItemQuantity = document.getElementById('cart-item-quantity');
 
-    cartItemQuantity.innerText = currentQuantity; // Update the quantity in the cart popup
-    cartTotalPrice.innerText = (currentQuantity * 125).toFixed(2); // Assuming the price is $125
+    cartItemQuantity.innerText = currentQuantity;
+    cartTotalPrice.innerText = (currentQuantity * 125).toFixed(2); 
 });
 
 // Event listener for the Cart button to show popup
 document.getElementById('cart-button').addEventListener('click', function () {
-    const cartPopup = document.getElementById('cart-popup'); // Make sure this ID matches your cart popup's ID
+    const cartPopup = document.getElementById('cart-popup'); 
     if (cartPopup) {
-        cartPopup.style.display = 'block'; // Show the popup
+        cartPopup.style.display = 'block';
     } else {
         console.error('Cart popup not found!');
     }
 });
-
-
 
 // Event listener for the Close button to hide the popup
 document.getElementById('close-popup').addEventListener('click', function () {
     document.getElementById('cart-popup').style.display = 'none';
 });
 
-// Close popup when clicking outside the cart
 window.addEventListener('click', function (event) {
     const cartPopup = document.getElementById('cart-popup');
     if (event.target === cartPopup) {
         cartPopup.style.display = 'none';
     }
+});
+
+
+// cart opertaions
+addToCartButton.addEventListener('click', function() {
+    cartNotification.textContent = cartItemQuantity; 
+    cartNotification.style.display = 'block'; 
+    itemQuantity.innerHTML = cartItemQuantity;
+    totalPrice.innerHTML = "$" + (cartItemQuantity * productPrice).toFixed(2);
+});
+
+cartButton.addEventListener('click', function () {
+    cartPopup.style.display = cartPopup.style.display === 'none' ? 'block' : 'none';
+});
+
+
+//width adjustment
+const hamburgerMenu = document.getElementById('hamburger-menu');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMenu = document.getElementById('close-menu');
+
+hamburgerMenu.addEventListener('click', () => {
+    mobileMenu.classList.add('show');
+});
+closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('show');
 });
